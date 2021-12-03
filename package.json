@@ -228,6 +228,7 @@
     "test-integration-postgres-native": "cross-env DIALECT=postgres-native npm run test-integration",
     "test-integration-sqlite": "cross-env DIALECT=sqlite npm run test-integration",
     "test-integration-mssql": "cross-env DIALECT=mssql npm run test-integration",
+    "test-jesse": "cross-env DIALECT=mysql yarn mocha \"test/integration/associations/scope.test.js\"",
     "test-mariadb": "cross-env DIALECT=mariadb npm test",
     "test-mysql": "cross-env DIALECT=mysql npm test",
     "test-sqlite": "cross-env DIALECT=sqlite npm test",

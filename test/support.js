@@ -103,7 +103,8 @@ const Support = {
 
     const sequelizeOptions = _.defaults(options, {
       host: options.host || config.host,
-      logging: process.env.SEQ_LOG ? console.log : false,
+      // logging: process.env.SEQ_LOG ? console.log : false,
+      logging: console.log,
       dialect: options.dialect,
       port: options.port || process.env.SEQ_PORT || config.port,
       pool: config.pool,
