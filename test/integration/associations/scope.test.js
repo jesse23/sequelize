@@ -96,7 +96,7 @@ describe(Support.getTestDialectTeaser('associations'), () => {
       });
     });
 
-    xdescribe('1:1', () => {
+    describe('1:1', () => {
       it('should create, find and include associations with scope values', async function() {
         await this.sequelize.sync({ force: true });
 
@@ -160,7 +160,7 @@ describe(Support.getTestDialectTeaser('associations'), () => {
       });
     });
 
-    xdescribe('1:M', () => {
+    describe('1:M', () => {
       it('should create, find and include associations with scope values', async function() {
         await this.sequelize.sync({ force: true });
 
@@ -419,7 +419,7 @@ describe(Support.getTestDialectTeaser('associations'), () => {
           });
         });
 
-        xdescribe('on the through model', () => {
+        describe('on the through model', () => {
           beforeEach(function() {
             this.Post = this.sequelize.define('post', {});
             this.Image = this.sequelize.define('image', {});
