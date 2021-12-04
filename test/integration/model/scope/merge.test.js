@@ -161,10 +161,13 @@ describe(Support.getTestDialectTeaser('Model'), () => {
         }
       });
 
-      it('should merge complex scopes with findOne options correctly regardless of their order', async function() {
+      it('[Flaky] should merge complex scopes with findOne options correctly regardless of their order', async function() {
         const results = await Promise.all(this.scopePermutations.map(([a, b, c, d]) => this.Foo.scope(a, b, c).findOne(this.scopes[d])));
         const first = results.shift().toJSON();
         for (const result of results) {
+          // flaky test - sometimes it gets to:
+          // - bazs: [ 4: [ qux7, qux8 ], 3: [ qux5, qux6] ]
+          // + bazs: [ 3: [ qux5, qux6 ], 4: [ qux7, qux8] ]
           expect(result.toJSON()).to.deep.equal(first);
         }
       });
